@@ -12,11 +12,15 @@
 <meta name="description" content="{{page.seo.description | default: site.data.site-settings.seo.description }}">
 <meta name="keywords" content="{{page.seo.keywords | default: site.data.site-settings.seo.keywords }}">
 
+<!--- >> default settings are there so if clients haven't populated the info, it's not empty but uses default */ -->
+
 {% if page.seo.hide-from-google == true %}
     <meta name="robots" content="noindex, nofollow">
 {% else %}
      <meta name="robots" content="index, follow">
 {% endif %}
+
+<!-- >> this is so that page doesn't show up in google searches before it's got content on it cause just because you hide it from your header menu it could still show up in a google search -->
 
 
 <!------------  Social media sharing META Tags ------------>
